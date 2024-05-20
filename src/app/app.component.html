@@ -1,0 +1,16 @@
+<div>
+  <p>
+    <label for="">Ingrese valor offset</label>
+    <input [(ngModel)] = "customOffset" type="text" name="" id="offset" class="offset">
+  </p>
+  <p>
+    <label for="">Ingrese valor limite</label>
+    <input [(ngModel)] = "customLimit" type="text" name="" id="limit">
+  </p>
+  <p><button (click)="getPokemonCustomList()">Consultar</button></p>
+  <p>
+    <span>{{validationResult}}</span>
+  </p>
+</div>
+
+<router-outlet></router-outlet>

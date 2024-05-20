@@ -1,0 +1,6 @@
+<p>poke-catalog works!</p>
+<div *ngFor="let pokemon; index as idx of pokemonList?.results">
+    <div (click)="getPokemonDetails(pokemon?.name)">
+        <p>{{idx}} - {{pokemon?.name}}</p>
+    </div>
+</div>
