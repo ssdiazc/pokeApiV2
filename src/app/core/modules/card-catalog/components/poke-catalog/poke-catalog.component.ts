@@ -16,6 +16,8 @@ export class PokeCatalogComponent implements OnInit {
   ) {}
   pokemonList: GetPokemonListModel | undefined;
   pokemonDetails: PokemonDetailsModel | undefined;
+  offsetValue = 0;
+  pageLimit = 20;
 
   ngOnInit(): void {
     this.getPokemonListStoreService.getPokemonList().subscribe((res) => {
@@ -31,12 +33,43 @@ export class PokeCatalogComponent implements OnInit {
       }
     });
 
-    this.getPokemonListStoreService.fetchPokemonList('0', '20');
+    this.getPokemonListStoreService.fetchPokemonList(
+      `${this.offsetValue}`,
+      `${this.pageLimit}`
+    );
   }
 
   getPokemonDetails(pokemonName: string | undefined) {
     const pokemonIdx = this.pokemonList?.findPokemonIdx(pokemonName || '');
     console.log({ pokemonIdx });
     this.pokemonDetailsStoreService.fetchPokemonDetails(pokemonIdx || '');
+  }
+
+  nextButtonClick() {
+    this.offsetValue += this.pageLimit + 1;
+    this.getPokemonListStoreService.fetchPokemonList(
+      `${this.offsetValue}`,
+      `${this.pageLimit}`
+    );
+  }
+
+  prevButtonClick() {
+    this.offsetValue = this.offsetValue - this.pageLimit - 1;
+    if (this.offsetValue < 0) {
+      this.offsetValue = 0;
+    } else {
+      this.getPokemonListStoreService.fetchPokemonList(
+        `${this.offsetValue}`,
+        `${this.pageLimit}`
+      );
+    }
+  }
+
+  startButtonClick() {
+    this.offsetValue = 0;
+    this.getPokemonListStoreService.fetchPokemonList(
+      `${this.offsetValue}`,
+      `${this.pageLimit}`
+    );
   }
 }

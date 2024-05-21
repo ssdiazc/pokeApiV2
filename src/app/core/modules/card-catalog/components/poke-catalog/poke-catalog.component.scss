@@ -1,0 +1,46 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../../../../../../styles-modules/colors.scss";
+
+.pok-btn-container {
+    margin:10px;
+}
+
+.btn-pok-list-primary {
+    background-color: $primary-button;
+    border-color: $primary-button-outline;
+    margin: 5px;
+    min-width: 140px;
+    -webkit-transition: all $primary-button-animation-hover-time ease-in-out;
+    transition: all $primary-button-animation-hover-time ease-in-out;
+}
+.btn-pok-list-primary:hover {
+    background-color: $primary-button-hover;
+    border-color: $primary-button-outline;
+    box-shadow: 2px 2px 2px rgb(201, 200, 200);
+    transform:scale(1.1);
+}
+
+.paginator-container {
+    margin: 20px;
+    .arrow-container-generals {
+        margin: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+        -webkit-transition: all $primary-button-animation-hover-time ease-in-out;
+        transition: all $primary-button-animation-hover-time ease-in-out;
+    }
+    .arrow-container-left {
+        text-align: right;
+    }
+    .arrow-container-center {
+        text-align: center;
+    }
+    .paginator-label-text {
+        margin: 10px;
+    }
+    .arrow-container-generals:hover {
+        transform:scale(1.1);
+        cursor: pointer;
+        color: $primary-button;
+    }
+}
