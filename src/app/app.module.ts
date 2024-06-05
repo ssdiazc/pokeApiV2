@@ -6,8 +6,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
+import { reducers } from './app-store.module';
 import { AppComponent } from './app.component';
-import { reducers } from './core/store/api-my-ip/api-my-ip-store-module';
 import { GetIpInformationEffects } from './core/store/api-my-ip/reducers/get-ip-information/get-ip-information.effect';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { GetIpInformationEffects } from './core/store/api-my-ip/reducers/get-ip-
     FormsModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
-    StoreModule.forFeature('apimyipmodule', reducers),
+    StoreModule.forFeature('appmodule', reducers),
     EffectsModule.forFeature([GetIpInformationEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
   ],

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { PokemonDetailsModel } from 'src/app/dependencies/models/pokemon-details-model';
-import { selectPokemonDetails } from '../../pokemon-catalog-store-module';
+import { selectPokemonDetails } from '../../../../modules/card-catalog/pokemon-catalog-store.module';
 import { fetchPokemonDetailsAPI } from './get-pokemon-details.action';
 
 @Injectable({

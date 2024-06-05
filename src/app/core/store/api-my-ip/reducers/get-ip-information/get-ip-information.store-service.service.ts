@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { GetMyIpByTypeModel } from 'src/app/dependencies/models/api-my-ip-get-ip-by-type-model';
-import { selectGetIpByType } from '../../api-my-ip-store-module';
+import { selectGetIpByType } from '../../../../../app-store.module';
 import { fetchGetIpByTypeAPI } from './get-ip-information.action';
 
 @Injectable({
