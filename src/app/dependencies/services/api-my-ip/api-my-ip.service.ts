@@ -20,7 +20,9 @@ export class ApiMyIpService {
     format?: string
   ): Observable<GetMyIpInformationByTypeResponseData> {
     return this.httpRequest.get<GetMyIpInformationByTypeResponseData>(
+      // Mock addr
       'https://demo9379358.mockable.io/ip-mock'
+      // Real addr
       // `${this.host}${this.contextPath}.${format || 'json'}`
     );
   }
